@@ -1,3 +1,14 @@
+function isPalindrome(num) {
+  if (num < 0) return false;
+  const dupNum = num;
+
+  const revNum = reverseDigits(num);
+
+  if (dupNum !== revNum) return false;
+
+  return true;
+}
+
 function reverseDigits(num) {
   if (num === 0) return 0;
 
@@ -20,7 +31,6 @@ function reverseDigits(num) {
 
   // restore sign
   res = res * sign;
-  console.log(res);
 
   // check for 32-bit signed integer overflow
   if (res < -(2 ** 31) || res > 2 ** 31 - 1) return 0;
@@ -28,6 +38,6 @@ function reverseDigits(num) {
   return res;
 }
 
-const result = reverseDigits(1534236469);
+const result = isPalindrome(78);
 
 console.log(result);
